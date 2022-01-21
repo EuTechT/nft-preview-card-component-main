@@ -1,0 +1,186 @@
+:root {
+    --primary-1: hsl(215, 51%, 70%);
+    --primary-2: hsl(178, 100%, 50%);
+    --primary-2-hover: hsla(178, 100%, 50%, 0.5);
+    
+    --neutral-1: hsl(217, 54%, 11%);
+    --neutral-2: hsl(216, 50%, 16%);
+    --neutral-3: hsl(215, 32%, 27%);
+    --neutral-4: hsl(0, 0%, 100%);
+
+    --font-size-p: 18px;
+
+    --font-family-1: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family-1);
+}
+
+body {
+    background-color: var(--neutral-1);
+    padding: 0 1.2rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 8rem auto;
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    background-color: var(--neutral-2);
+}
+
+.img,
+.img img {
+    border-radius: 0.8rem;
+}
+
+.img img {
+    max-width: 100%;
+}
+
+.img {
+    position: relative;
+    cursor: pointer;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-2-hover);
+
+    border-radius: 0.8rem;
+    visibility: hidden;
+}
+
+.view img {
+    max-width: 50px;
+}
+
+.img:hover .view {
+    visibility: visible;
+    transition: all 0.3s linear;
+}
+
+
+.card__desc {
+    margin: 1.4rem 0;
+}
+
+.title {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    color: var(--neutral-4);
+    transition: color 0.3s linear;
+}
+
+.title:hover {
+    color: var(--primary-2);
+}
+
+.paragraph {
+    font-size: var(--font-size-p);
+    color: var(--primary-1);
+    font-weight: 300;
+}
+
+.card__details {
+    width: 100%;
+}
+
+.card__details,
+.card__ethereum,
+.card__clock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__details img {
+    margin-right: 0.4rem;
+}
+
+.card__ethereum strong {
+    color: var(--primary-2);
+}
+
+.card__clock span {
+    color: var(--primary-1);
+}
+
+@media (max-width: 290px) {
+    .card__details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card__ethereum {
+        margin-bottom: 0.6rem;
+    }
+}
+
+hr {
+    height: 2px;
+    margin: 1.4rem 0;
+    background-color: var(--neutral-3);
+    border: none;
+}
+
+.card__profile {
+    display: flex;
+    align-items: center;
+}
+
+.card__profile img {
+    width: 40px;
+    border-radius: 50%;
+    border: solid 2px var(--neutral-4);
+    margin-right: 1.2rem;
+}
+
+.card__profile p {
+    color: var(--primary-1);
+}
+
+.card__profile a {
+    color: var(--neutral-4);
+}
+
+.card__profile a:hover {
+    color: var(--primary-2);
+    transition: color 0.3s linear;
+}
+
+@media (max-width: 250px){
+    .card__profile {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .card__profile img {
+        margin: 0 0 1.2rem;
+    }
+}
